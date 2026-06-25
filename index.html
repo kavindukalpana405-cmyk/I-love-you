@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Do You Love Me?</title>
 
 <style>
-body{
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
     height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     font-family:Arial,sans-serif;
-    background:#fff;
+    background:white;
+    overflow:hidden;
 }
 
 .container{
@@ -20,19 +27,26 @@ body{
 }
 
 img{
-    width:450px;
+    width:85vw;
+    max-width:700px;
 }
 
 h1{
-    font-size:45px;
+    font-size:60px;
+    margin:20px 0;
+}
+
+.buttons{
+    margin-top:20px;
 }
 
 button{
-    padding:12px 30px;
+    padding:18px 45px;
+    font-size:28px;
     border:none;
-    border-radius:25px;
-    font-size:18px;
+    border-radius:40px;
     cursor:pointer;
+    margin:10px;
 }
 
 #yes{
@@ -47,34 +61,40 @@ button{
 }
 </style>
 </head>
-
 <body>
 
 <div class="container">
-    <img src="https://i.imgur.com/r9aU2xv.png">
+
+    <!-- GIF Link Eka Danna -->
+    <img src="https://media.tenor.com/8zH5mJc7R8gAAAAi/cute-bear.gif" alt="Cute Bear">
+
     <h1>Do you love me? ❤️</h1>
 
-    <button id="yes">Yes</button>
-    <button id="no">No</button>
+    <div class="buttons">
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+    </div>
+
 </div>
 
 <script>
 const noBtn = document.getElementById("no");
 
-noBtn.addEventListener("mouseover", function(){
-    const x = Math.random() * (window.innerWidth - 100);
-    const y = Math.random() * (window.innerHeight - 50);
+noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 60);
 
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
 });
 
-document.getElementById("yes").onclick = function(){
+document.getElementById("yes").onclick = () => {
     document.body.innerHTML = `
-    <div style="text-align:center;font-family:Arial;">
-        <img src="https://i.imgur.com/r9aU2xv.png" width="250">
-        <h1>I knew it 😍❤️</h1>
-    </div>`;
+    <div style="text-align:center;">
+        <img src="https://media.tenor.com/8zH5mJc7R8gAAAAi/cute-bear.gif" style="width:85vw;max-width:700px;">
+        <h1 style="font-size:70px;font-family:Arial;">I knew it 😍❤️</h1>
+    </div>
+    `;
 };
 </script>
 
